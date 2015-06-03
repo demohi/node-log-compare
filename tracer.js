@@ -12,4 +12,6 @@ logger.trace('hello', 'world');
 logger.debug('hello %s', 'world', 123);
 logger.info('hello %s %d', 'world', 123, {foo: 'bar'});
 logger.warn('hello %s %d %j', 'world', 123, {foo: 'bar'});
-logger.error('hello %s %d %j %j %j', 'world', 123, {foo: 'bar'}, [1, 2, 3, 4], new Error('tracer error msg'));
+logger.error(new Error('tracer error msg'));
+
+logger.error('127.0.0.1', 'sdjf;lasdkfl;asdfjl;aslkdf;a', new Error('tracer error'), logger)

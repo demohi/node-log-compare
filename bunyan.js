@@ -17,3 +17,4 @@ var log = bunyan.createLogger({
 });
 
 log.error('hello %s %d %j', 'world', 123, {foo: 'bar'}, [1, 2, 3, 4], new Error('bunyan error msg'));
+log.error(log);

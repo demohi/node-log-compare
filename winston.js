@@ -16,6 +16,7 @@
 var fs = require('fs');
 var util = require('util');
 var winston = require('winston');
+var stringify = require('safe-json-stringify');
 //var mkdirp = require('mkdirp');
 
 
@@ -83,7 +84,7 @@ Logger.prototype.error = function (message) {
         if (typeof(message.toString) == 'function')
             msg = message.toString();
         else
-            msg = JSON.stringify(message);
+            msg = stringify(message);
     }
     this.errorLog.error(msg);
 };
@@ -93,4 +94,5 @@ var logger = new Logger();
 
 
 logger.error(new Error('winston error log'));
+logger.error(logger);
 logger.info('hello');
